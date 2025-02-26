@@ -1,4 +1,4 @@
-# The experiment results and code of the paper "Using LLMs in Generating Design Rationale for Software Architecture Decisions"
+# Using LLMs in Generating Design Rationale for Software Architecture Decisions
 
 This repository contains the experiment results of the paper *"Using LLMs in Generating Design Rationale for Software Architecture Decisions"*, as well as the implementation code for the LLM-based agents presented in the paper. The dataset and code are provided to help other researchers and developers replicate the experiments or conduct further research.
 
