@@ -17,7 +17,8 @@ class IdentifyRelevantAspect(Action):
     PROMPT_TEMPLATE : str = """
     Based on the provided Software Architecture Problem and the corresponding Architecture Design Decision, please identify and define no more than 6 most relevant and important aspects for choosing this decision.\n
     Architecture Problem: {architecture_problem}\n
-    Architecture Design Decision: {architecture_design_decision}\n  
+    Architecture Design Decision: {architecture_design_decision}\n
+    Please note that the background knowledge may contain inaccuracies, so please verify and use it accordingly.\n
     Your output must be a list in the following format, without any other information:\n
     1. **aspect1**: aspect1_definition\n
     2. **aspect2**: aspect2_definition\n
