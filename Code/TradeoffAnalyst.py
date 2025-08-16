@@ -53,7 +53,7 @@ class TradeoffAnalyst(Role):
         print(msg_dict)
         print("+"*10)
         code_text = await todo.run(msg_dict["architecture_problem"], msg_dict["architecture_design_decision"], review_results_str)
-        with open("C:\\Research\\LLMsForDesignProblem\\code\\formal_experiment\\AI_Agent\\rationale.txt", "a") as f:
+        with open("rationale.txt", "a") as f:
             f.write("*"*20+"Tradeoff Analysis"+ "*"*20)
             f.write("\n")
             f.write(code_text)

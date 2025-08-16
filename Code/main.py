@@ -19,9 +19,10 @@ async def main():
     context = Context() # Load config2.yaml
     env = Environment(context=context)
     env.add_roles([AspectIdentifier(),InformationCollector(),AspectAnalyst(),AspectReviewer(),TradeoffAnalyst()])
-
-    df = pd.read_excel("C:\\Research\\LLMsForDesignProblem\\code\\formal_experiment\\AI_Agent\\formal_experiment_AIAgent-test.xlsx")
-    selected_columns = df[["Post ID","Architecture Problem","Architecture Decision"]]
+    with open("config.json", "r") as f:
+        config = json.load(f)
+    df = pd.read_excel(config["data_file"])
+    selected_columns = df[["Link","Architecture Problem","Architecture Decision"]]
     for index,row in selected_columns.iterrows():
         data = {
         "architecture_problem": row['Architecture Problem'].replace('\n', ' '),
@@ -29,11 +30,11 @@ async def main():
         }
         temp_str = json.dumps(data)
         print(temp_str)
-        with open("C:\\Research\\LLMsForDesignProblem\\code\\formal_experiment\\AI_Agent\\rationale.txt", "a") as f:
+        with open(config["rationale.txt"], "a") as f:
             f.write("+"*40+"\n")
             f.write("+"*40+"\n")
             f.write("+"*40+"\n")
-            f.write("###"+str(row['Post ID'])+"###"+'\n')
+            f.write("###"+str(row['ID'])+"###"+'\n')
             f.write("\n")
             print("The Issue ID have been written to the file!！")
         env.publish_message(Message(content=temp_str, cause_by=UserRequirement))

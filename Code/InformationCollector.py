@@ -92,7 +92,7 @@ class CollectKnowledge(Action):
     @staticmethod
     def parse_relevant_aspect(rsp)->list[str]:
         keywords = re.findall(r'\d+\.\s+(.*?)\s*$', rsp, re.MULTILINE)
-        with open("\\rationale.txt", "a") as f:
+        with open("rationale.txt", "a") as f:
             f.write("-"*20+"Extracted Keywords: ")
             for keyword in keywords:
                 f.write(keyword + ", ")

@@ -54,7 +54,7 @@ class AspectAnalyst(Role):
             msg_dict = json.loads(single_news.content)
             knowledge_str = "\n".join(msg_dict["knowledge"])
             code_text = await todo.run(msg_dict["architecture_problem"], msg_dict["architecture_design_decision"], msg_dict["aspect"], msg_dict["aspect_definition"],knowledge_str)
-            with open("ationale.txt", "a") as f:
+            with open("rationale.txt", "a") as f:
                 f.write("*"*20+"Aspect: ")
                 f.write(msg_dict["aspect"]+"*"*20+"\n")
                 f.write(code_text)

@@ -56,7 +56,7 @@ class AspectReviewer(Role):
             print(msg_dict)
             print("+"*10)
             code_text = await todo.run(msg_dict["architecture_problem"], msg_dict["architecture_design_decision"], msg_dict["aspect"], msg_dict["aspect_rationale"])
-            with open("C:\\Research\\LLMsForDesignProblem\\code\\formal_experiment\\AI_Agent\\rationale.txt", "a") as f:
+            with open("rationale.txt", "a") as f:
                 f.write("*"*20+"Review Aspect: ")
                 f.write(msg_dict["aspect"]+"*"*20+"\n")
                 f.write(code_text)
